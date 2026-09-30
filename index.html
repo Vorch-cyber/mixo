@@ -1,0 +1,76 @@
+
+
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e31d2b">
+<title>MIXO — More to discover.</title>
+<link rel="icon" href="https://s15.gifyu.com/images/bQxE6.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script>
+</head>
+<body>
+<div class="announcement">✦ MIXO — More to discover. <span>Temukan barang menarik setiap hari.</span></div>
+<header>
+  <a class="brand" href="#home">
+    <img src="https://s15.gifyu.com/images/bQxEg.png" alt="MIXO Logo" class="brand-logo">
+    <span><b>MIXO</b><small>More to discover.</small></span>
+  </a>
+  <div class="search"><span>⌕</span><input id="q" placeholder="Cari produk yang kamu suka..."></div>
+  <button class="cart-btn" id="cartBtn">🛒 <span>Keranjang</span><strong id="cartCount">0</strong></button>
+</header>
+<nav>
+  <a class="active" href="#home">Beranda</a><a href="#products">Semua Produk</a>
+  <button onclick="cat('Pakaian')">Pakaian</button><button onclick="cat('Aksesoris')">Aksesoris</button>
+  <button onclick="cat('Jajanan')">Jajanan</button><button onclick="cat('Lainnya')">Lainnya</button>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">WELCOME TO MIXO</div>
+    <h1>More to <span>discover.</span></h1>
+    <p>Berbagai barang menarik dalam satu tempat.</p>
+    <small>Fashion, aksesoris, jajanan, dan random finds yang mungkin belum pernah kamu temukan.</small>
+    <div class="hero-actions"><a href="#products" class="primary">Mulai Belanja <b>→</b></a><a id="heroWa" class="secondary">💬 Chat WhatsApp</a></div>
+  </div>
+  <div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><img src="https://s15.gifyu.com/images/bQxE6.png" alt="MIXO icon"></div>
+</section>
+
+<section class="quick-cats">
+  <button onclick="cat('Pakaian')"><span>👕</span><div><b>Pakaian</b><small>Fashion pilihan</small></div><i>→</i></button>
+  <button onclick="cat('Aksesoris')"><span>💍</span><div><b>Aksesoris</b><small>Lengkapi gayamu</small></div><i>→</i></button>
+  <button onclick="cat('Jajanan')"><span>🍪</span><div><b>Jajanan</b><small>Camilan favorit</small></div><i>→</i></button>
+  <button onclick="cat('Lainnya')"><span>✨</span><div><b>Random Finds</b><small>More to discover</small></div><i>→</i></button>
+</section>
+
+<section id="products" class="products-section">
+  <div class="section-head"><div><span class="section-kicker">EXPLORE</span><h2 id="heading">Produk Terbaru</h2></div><button onclick="cat('Semua')">Lihat Semua →</button></div>
+  <div id="status">Memuat produk...</div><div id="grid"></div>
+</section>
+
+<section class="trust">
+  <div><span>🚚</span><b>Pengiriman</b><small>Diproses dengan cepat</small></div>
+  <div><span>💬</span><b>WhatsApp</b><small>Order langsung & mudah</small></div>
+  <div><span>✨</span><b>Produk Pilihan</b><small>Selalu ada yang baru</small></div>
+  <div><span>🔒</span><b>Belanja Nyaman</b><small>Pesan tanpa login</small></div>
+</section>
+</main>
+
+<footer><div><div class="footer-brand"><img src="https://s15.gifyu.com/images/bQxEg.png" alt=""><b>MIXO</b></div><p>More to discover.</p></div><div class="footer-right"><a id="footerWa">💬 WhatsApp: 6282279028924</a><span>© <span id="year"></span> MIXO</span></div></footer>
+
+<a id="wa" class="float-wa">💬 <span>Chat WhatsApp</span></a>
+
+<div id="cartPanel" class="cart-panel" aria-hidden="true">
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer">
+    <div class="cart-head"><div><span class="section-kicker">YOUR CART</span><h3>Keranjang</h3></div><button id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-foot"><div><span>Total</span><strong id="cartTotal">LKR 0</strong></div><button id="checkout" class="checkout">Checkout via WhatsApp →</button><small>Pesanan akan dikirim ke WhatsApp MIXO.</small></div>
+  </aside>
+</div>
+<script src="app.js"></script>
+</body></html>
